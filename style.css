@@ -14,7 +14,7 @@ body {
     font-size: calc(var(--size) * 1.8);
     line-height: 1.5;
     min-height: 80vh;
-    max-width: 1600px;
+    max-width: 80rem;
     margin: 0 auto;
     word-wrap: break-word;
 }
