@@ -45,6 +45,14 @@ const items = [
         text: "Learn localStorage by Building a Todo App",
         href: "./Learn localStorage by Building a Todo App",
     },
+    {
+        text: "Learn Recursion by Building a Decimal to Binary Converter",
+        href: "./Learn Recursion by Building a Decimal to Binary Converter",
+    },
+    {
+        text: "Build a Roman Numeral Converter Project",
+        href: "./Build a Roman Numeral Converter Project",
+    },
 ];
 
 items.forEach((item) => {
