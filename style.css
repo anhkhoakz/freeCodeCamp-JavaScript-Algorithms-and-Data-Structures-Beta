@@ -36,18 +36,15 @@ footer {
     padding-top: var(--spacing);
 }
 a {
-    color: currentColor;
+    color: black;
     text-decoration-color: var(--color-primary);
-    text-decoration-thickness: 0.3ex;
-    text-underline-offset: 0.3ex;
+    text-decoration-thickness: 0.2ex;
+    text-underline-offset: 0.2ex;
+    /* text-decoration: none; */
 }
 a:hover {
-    text-decoration-thickness: 0.4ex;
-}
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    text-decoration-thickness: 0.3ex;
+    /* text-decoration: none; */
 }
 h1,
 h2,
@@ -62,12 +59,6 @@ h1 {
 h2 {
     font-size: calc(var(--size) * 3.4);
 }
-h3 {
-    font-size: calc(var(--size) * 2.6);
-}
-h4 {
-    font-size: calc(var(--size) * 1.8);
-}
 ul,
 ol {
     padding-inline-start: var(--spacing);
@@ -81,46 +72,9 @@ li {
 :is(h1, h2, h3, h4) + * {
     margin-block-start: calc(var(--spacing) / 3);
 }
-:is(h1, h2, h3, h4) + :where(h2, h3, h4) {
-    margin-block-start: calc(var(--spacing) * 2);
-}
-.title {
-    text-decoration: none;
-}
-.title h1 {
-    font-size: calc(var(--size) * 3.4);
-    margin-top: calc(var(--spacing) / 2);
-}
-ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-}
-ul.blog-posts li {
-    display: flex;
-    flex-direction: column;
-}
-ul.blog-posts li span {
-    min-width: 11ch;
-}
-p.byline {
-    opacity: 0.5;
-}
 code {
     font-family: Consolas, monospace;
     padding: 2px calc(var(--spacing) / 4);
     background-color: snow;
     font-size: calc(var(--size) * 1.4);
-}
-pre code {
-    display: block;
-    padding: var(--spacing);
-    overflow-x: auto;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-}
-@media screen and (min-width: 600px) {
-    ul.blog-posts li {
-        flex-direction: row;
-        gap: calc(var(--spacing) / 2);
-    }
 }

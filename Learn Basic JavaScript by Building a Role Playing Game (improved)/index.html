@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./styles.css" />
+        <title>RPG - Dragon Repeller</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        favicon
+        <link rel="icon" type="image/png" href="favicon.svg" />
+    </head>
+
+    <body>
+        <div id="game">
+            <div id="stats">
+                <span class="stat"
+                    ><i class="fa-solid fa-bowling-ball"></i>:
+                    <strong><span id="xpText">0</span></strong></span
+                >
+                <span class="stat"
+                    ><i class="fa-solid fa-droplet"></i>:
+                    <strong><span id="healthText">100</span></strong></span
+                >
+                <span class="stat"
+                    ><i class="fa-solid fa-coins"></i>:
+                    <strong><span id="goldText">50</span></strong></span
+                >
+            </div>
+            <div id="controls">
+                <button id="button1">
+                    <i class="fa-solid fa-store"></i> Go to store
+                </button>
+                <button id="button2">
+                    <i class="fa-solid fa-skull"></i> Go to cave
+                </button>
+                <button id="button3">
+                    <i class="fa-solid fa-dragon"></i> Fight dragon
+                </button>
+            </div>
+            <div id="monsterStats">
+                <span class="stat"
+                    >Monster Name:
+                    <strong><span id="monsterName"></span></strong
+                ></span>
+                <span class="stat"
+                    >Health: <strong><span id="monsterHealth"></span></strong
+                ></span>
+            </div>
+            <div id="text">
+                Welcome to Dragon Repeller. You must defeat the dragon that is
+                preventing people from leaving the town. You are in the town
+                square. Where do you want to go? Use the buttons above.
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
