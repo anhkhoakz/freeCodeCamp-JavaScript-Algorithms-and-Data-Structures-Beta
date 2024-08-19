@@ -1,67 +1,60 @@
 const list = document.getElementById("project-list");
+const githubList = document.getElementById("github-list");
 
-const items = [
-    {
-        text: "Learn Introductory JavaScript by Building a Pyramid Generator",
-        href: "./Learn Introductory JavaScript by Building a Pyramid Generator",
-    },
-    {
-        text: "Review JavaScript Fundamentals by Building a Gradebook App",
-        href: "./Review JavaScript Fundamentals by Building a Gradebook App",
-    },
-    {
-        text: "Learn Basic JavaScript by Building a Role Playing Game",
-        href: "./Learn Basic JavaScript by Building a Role Playing Game",
-    },
-    {
-        text: "Learn Basic Debugging by Building a Random Background Color Changer",
-        href: "./Learn Basic Debugging by Building a Random Background Color Changer",
-    },
-    {
-        text: "Learn Form Validation by Building a Calorie Counter",
-        href: "./Learn Form Validation by Building a Calorie Counter",
-    },
-    {
-        text: "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
-        href: "./Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
-    },
-    {
-        text: "Learn Basic String and Array Methods by Building a Music Player",
-        href: "./Learn Basic String and Array Methods by Building a Music Player",
-    },
-    {
-        text: "Build a Palindrome Checker Project",
-        href: "./Build a Palindrome Checker Project",
-    },
-    {
-        text: "Learn the Date Object by Building a Date Formatter",
-        href: "./Learn the Date Object by Building a Date Formatter",
-    },
-    {
-        text: "Learn Modern JavaScript Methods by Building Football Team Cards",
-        href: "./Learn Modern JavaScript Methods by Building Football Team Cards",
-    },
-    {
-        text: "Learn localStorage by Building a Todo App",
-        href: "./Learn localStorage by Building a Todo App",
-    },
-    {
-        text: "Learn Recursion by Building a Decimal to Binary Converter",
-        href: "./Learn Recursion by Building a Decimal to Binary Converter",
-    },
-    {
-        text: "Build a Roman Numeral Converter Project",
-        href: "./Build a Roman Numeral Converter Project",
-    },
+const projectNames = [
+    "Learn Introductory JavaScript by Building a Pyramid Generator",
+    "Review JavaScript Fundamentals by Building a Gradebook App",
+    "Learn Basic JavaScript by Building a Role Playing Game",
+    "Learn Basic Debugging by Building a Random Background Color Changer",
+    "Learn Form Validation by Building a Calorie Counter",
+    "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+    "Learn Basic String and Array Methods by Building a Music Player",
+    "Build a Palindrome Checker Project",
+    "Learn the Date Object by Building a Date Formatter",
+    "Learn Modern JavaScript Methods by Building Football Team Cards",
+    "Learn localStorage by Building a Todo App",
+    "Learn Recursion by Building a Decimal to Binary Converter",
+    "Build a Roman Numeral Converter Project",
+    "Learn Regular Expressions by Building a Spam Filter",
 ];
 
-items.forEach((item) => {
-    const listItem = document.createElement("li");
-    const link = document.createElement("a");
+function createURLs(basePath, projectName) {
+    const urlFriendlyName = projectName.split(" ").join("%20");
+    return `${basePath}/${urlFriendlyName}`;
+}
 
-    link.href = item.href;
-    link.textContent = item.text;
+function createURLsJSOnly(basePath, projectName) {
+    const urlFriendlyName = projectName.split(" ").join("%20");
+    return `${basePath}/${urlFriendlyName}/script.js`;
+}
 
-    listItem.appendChild(link);
-    list.appendChild(listItem);
+projectNames.forEach((projectName) => {
+    const localUrl = createURLs(".", projectName);
+    const githubUrl = createURLs(
+        "https://github.com/anhkhoakz/freeCodeCamp-JavaScript-Algorithms-and-Data-Structures-Beta/tree/main",
+        projectName
+    );
+
+    const localListItem = document.createElement("li");
+    const localLink = document.createElement("a");
+    projectsWithJSOnly = [
+        "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "Review JavaScript Fundamentals by Building a Gradebook App",
+    ];
+    if (projectsWithJSOnly.includes(projectName)) {
+        localLink.href = createURLsJSOnly(".", projectName);
+    } else {
+        localLink.href = createURLs(".", projectName);
+    }
+    localLink.textContent = projectName;
+    localListItem.appendChild(localLink);
+    list.appendChild(localListItem);
+
+    const githubListItem = document.createElement("li");
+    const githubLink = document.createElement("a");
+    githubLink.href = `${githubUrl}`;
+    githubLink.target = "_blank";
+    githubLink.textContent = projectName;
+    githubListItem.appendChild(githubLink);
+    githubList.appendChild(githubListItem);
 });
