@@ -17,6 +17,7 @@ const projectNames = [
     "Build a Roman Numeral Converter Project",
     "Learn Regular Expressions by Building a Spam Filter",
     "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+    "Learn Advanced Array Methods by Building a Statistics Calculator",
 ];
 
 function createURLs(basePath, projectName) {
