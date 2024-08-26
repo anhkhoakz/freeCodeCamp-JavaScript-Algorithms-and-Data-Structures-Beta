@@ -18,6 +18,7 @@ const projectNames = [
     "Learn Regular Expressions by Building a Spam Filter",
     "Learn Basic Algorithmic Thinking by Building a Number Sorter",
     "Learn Advanced Array Methods by Building a Statistics Calculator",
+    "Learn Functional Programming by Building a Spreadsheet",
 ];
 
 function createURLs(basePath, projectName) {
