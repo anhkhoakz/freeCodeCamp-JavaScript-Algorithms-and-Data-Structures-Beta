@@ -4,12 +4,31 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Palindrome Checker</title>
-        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+            integrity="sha512-UXfikgakSZBii5lkvmDCRO+IYWQhTtwMOJ+3EmGEA+oA82kvbSskgw3OI16Jx1kINgF8aqOkYE+c9h4m6muONg=="
+            crossorigin="anonymous"
+        />
+        <style>
+            .container {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
-            <input type="text" id="text-input" />
-            <button id="check-btn">Check</button>
+            <form onsubmit="return false;">
+                <legend><h1>Palindrome Checker</h1></legend>
+                <fieldset role="group">
+                    <input type="text" id="text-input" />
+                    <button id="check-btn">Check</button>
+                </fieldset>
+            </form>
             <p id="result"></p>
         </div>
         <script src="script.js"></script>
