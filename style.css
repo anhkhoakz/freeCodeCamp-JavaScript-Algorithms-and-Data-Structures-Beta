@@ -78,3 +78,21 @@ code {
     background-color: snow;
     font-size: calc(var(--size) * 1.4);
 }
+
+.link {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("link.svg");
+    background-color: var(--color-primary);
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+i:hover {
+    background-color: #4fc2ff;
+}
