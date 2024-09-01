@@ -1,5 +1,4 @@
 const list = document.getElementById("project-list");
-const githubList = document.getElementById("github-list");
 
 const projectNames = [
     "Learn Introductory JavaScript by Building a Pyramid Generator",
@@ -23,6 +22,11 @@ const projectNames = [
     "Learn Basic OOP by Building a Shopping Cart",
 ];
 
+const projectsWithJSOnly = [
+    "Learn Introductory JavaScript by Building a Pyramid Generator",
+    "Review JavaScript Fundamentals by Building a Gradebook App",
+];
+
 function createURLs(basePath, projectName) {
     const urlFriendlyName = projectName.split(" ").join("%20");
     return `${basePath}/${urlFriendlyName}`;
@@ -33,52 +37,55 @@ function createURLsJSOnly(basePath, projectName) {
     return `${basePath}/${urlFriendlyName}/script.js`;
 }
 
-projectNames.forEach((projectName) => {
-    const githubUrl = createURLs(
-        "https://github.com/anhkhoakz/freeCodeCamp-JavaScript-Algorithms-and-Data-Structures-Beta/tree/main",
-        projectName
-    );
-
-    const localListItem = document.createElement("li");
-
-    const projectText = document.createTextNode(projectName);
-
+function createLocalLink(projectName, projectsWithJSOnly) {
     const localLink = document.createElement("a");
-    projectsWithJSOnly = [
-        "Learn Introductory JavaScript by Building a Pyramid Generator",
-        "Review JavaScript Fundamentals by Building a Gradebook App",
-    ];
+    const localIcon = document.createElement("i");
+    localIcon.className = "link";
+    localLink.appendChild(localIcon);
+
     if (projectsWithJSOnly.includes(projectName)) {
         localLink.href = createURLsJSOnly(".", projectName);
     } else {
         localLink.href = createURLs(".", projectName);
     }
 
-    const localIcon = document.createElement("i");
-    localIcon.className = "link";
+    return localLink;
+}
 
-    localLink.appendChild(localIcon);
-
-    localListItem.appendChild(projectText);
-    localListItem.appendChild(document.createTextNode("\u00A0"));
-    localListItem.appendChild(localLink);
-    list.appendChild(localListItem);
-
-    const githubListItem = document.createElement("li");
-
-    const githubText = document.createTextNode(projectName);
-
+function createGitHubLink(projectName) {
     const githubLink = document.createElement("a");
-    githubLink.href = `${githubUrl}`;
+    const githubIcon = document.createElement("i");
+    githubIcon.className = "gh";
+    githubLink.appendChild(githubIcon);
+    githubLink.href = createURLs(
+        "https://github.com/anhkhoakz/freeCodeCamp-JavaScript-Algorithms-and-Data-Structures-Beta/tree/main",
+        projectName
+    );
     githubLink.target = "_blank";
 
-    const githubIcon = document.createElement("i");
-    githubIcon.className = "link";
+    return githubLink;
+}
 
-    githubLink.appendChild(githubIcon);
+function createProjectListItem(projectName, projectsWithJSOnly) {
+    const projectListItem = document.createElement("li");
+    const projectText = document.createTextNode(projectName);
 
-    githubListItem.appendChild(githubText);
-    githubListItem.appendChild(document.createTextNode("\u00A0"));
-    githubListItem.appendChild(githubLink);
-    githubList.appendChild(githubListItem);
+    const localLink = createLocalLink(projectName, projectsWithJSOnly);
+    const githubLink = createGitHubLink(projectName);
+
+    projectListItem.appendChild(projectText);
+    projectListItem.appendChild(document.createTextNode("\u00A0"));
+    projectListItem.appendChild(localLink);
+    projectListItem.appendChild(document.createTextNode("\u00A0"));
+    projectListItem.appendChild(githubLink);
+
+    return projectListItem;
+}
+
+projectNames.forEach((projectName) => {
+    const projectListItem = createProjectListItem(
+        projectName,
+        projectsWithJSOnly
+    );
+    list.appendChild(projectListItem);
 });
