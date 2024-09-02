@@ -1,14 +1,14 @@
 :root {
     font-size: 70%;
-    --color-dark: black;
-    --color-light: white;
-    --color-primary: #1a8fe3;
+    --color-dark: #1b1b32;
+    --color-light: #f5f6f7;
+    --color-primary: #ffffff;
     --size: 1rem;
     --spacing: calc(var(--size) * 2.4);
 }
 body {
-    background: var(--color-light);
-    color: var(--color-dark);
+    background: var(--color-dark);
+    color: var(--color-light);
     padding: 4rem;
     font-family: Georgia, sans-serif;
     font-size: calc(var(--size) * 1.8);
@@ -36,7 +36,7 @@ footer {
     padding-top: var(--spacing);
 }
 a {
-    color: black;
+    color: var(--color-white);
     text-decoration-color: var(--color-primary);
     text-decoration-thickness: 0.2ex;
     text-underline-offset: 0.2ex;
@@ -75,7 +75,7 @@ li {
 code {
     font-family: Consolas, monospace;
     padding: 2px calc(var(--spacing) / 4);
-    background-color: snow;
+    background-color: #0a0a23;
     font-size: calc(var(--size) * 1.4);
 }
 
@@ -83,7 +83,7 @@ i {
     display: inline-block;
     width: 1em;
     height: 1em;
-    background-color: var(--color-primary);
+    background-color: var(--color-light);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
@@ -103,5 +103,5 @@ i {
 }
 
 i:hover {
-    background-color: #4fc2ff;
+    background-color: var(--color-primary);
 }
