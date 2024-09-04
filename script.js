@@ -20,6 +20,7 @@ const projectNames = [
     "Learn Functional Programming by Building a Spreadsheet",
     "Build a Telephone Number Validator Project",
     "Learn Basic OOP by Building a Shopping Cart",
+    "Learn Intermediate OOP by Building a Platformer Game",
 ];
 
 const projectsWithJSOnly = [
