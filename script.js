@@ -90,3 +90,21 @@ projectNames.forEach((projectName) => {
     );
     list.appendChild(projectListItem);
 });
+
+function searchProject() {
+    const input = document.getElementById("search");
+    const filter = input.value.toUpperCase();
+    const ul = document.getElementById("project-list");
+    const li = ul.getElementsByTagName("li");
+
+    for (let i = 0; i < li.length; i++) {
+        let txtValue = li[i].textContent || li[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+window.onload = document.getElementsByTagName("form")[0].reset();

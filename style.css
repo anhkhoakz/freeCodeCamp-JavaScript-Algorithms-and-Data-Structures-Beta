@@ -105,3 +105,11 @@ i {
 i:hover {
     background-color: var(--color-primary);
 }
+
+#search {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 18em;
+}
