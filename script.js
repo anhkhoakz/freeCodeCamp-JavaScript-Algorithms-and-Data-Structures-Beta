@@ -22,6 +22,8 @@ const projectNames = [
     "Learn Basic OOP by Building a Shopping Cart",
     "Learn Intermediate OOP by Building a Platformer Game",
     "Review Intermediate Algorithmic Thinking by Building a Dice Game",
+    "Build a Cash Register Project",
+    "Learn Fetch and Promises by Building an fCC Authors Page",
 ];
 
 const projectsWithJSOnly = [

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cash Register</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png"
+            sizes="32x32"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+            integrity="sha512-UXfikgakSZBii5lkvmDCRO+IYWQhTtwMOJ+3EmGEA+oA82kvbSskgw3OI16Jx1kINgF8aqOkYE+c9h4m6muONg=="
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <main class="container" style="max-width: 100vh">
+            <h1>Cash Register Project</h1>
+            <form onsubmit="return false;">
+                <fieldset role="group">
+                    <input type="number" id="cash" step="any" min="0" />
+                    <button id="purchase-btn">Purchase</button>
+                </fieldset>
+                <p id="change-due"></p>
+            </form>
+            <br />
+            <div class="container">
+                <h3 id="total"></h3>
+            </div>
+            <div class="container">
+                <h3>Change in drawer:</h3>
+                <!-- <div id="drawer"></div> -->
+                <table id="drawer"></table>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
