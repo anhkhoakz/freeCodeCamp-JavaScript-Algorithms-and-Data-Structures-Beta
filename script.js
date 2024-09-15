@@ -24,6 +24,7 @@ const projectNames = [
     "Review Intermediate Algorithmic Thinking by Building a Dice Game",
     "Build a Cash Register Project",
     "Learn Fetch and Promises by Building an fCC Authors Page",
+    "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
 ];
 
 const projectsWithJSOnly = [
